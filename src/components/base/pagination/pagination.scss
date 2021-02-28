@@ -1,0 +1,47 @@
+.pagination {
+  margin: 20px 0 150px 0;
+
+  > .grid {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.pagination__btn {
+  display: inline-block;
+  max-width: 100px;
+  border: 0;
+  border: 1px solid #666;
+  background: 0;
+  outline: 0;
+  padding: 5px;
+
+  &[disabled] {
+    cursor: default;
+    border: 1px solid #ccc;
+  }
+}
+
+.pagination__counter {
+  border: 1px solid #666;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.3em;
+  border-radius: 15px;
+  margin: 0 20px;
+  padding-top: 7px;
+}
+
+.pagination__counter {
+  input {
+    border: 0;
+    outline: 0;
+    width: 20px;
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+}

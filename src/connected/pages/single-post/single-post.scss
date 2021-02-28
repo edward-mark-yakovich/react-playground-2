@@ -1,0 +1,26 @@
+.single-post {
+  position: relative;
+  width: 100%;
+}
+
+.single-post__copy {
+  img,
+  figure,
+  video {
+  	display: inline-block;
+  	width: 100%;
+  	height: auto;
+  	margin: 20px 0;
+  }
+
+  figure iframe {
+  	width: 100%;
+  	min-height: 400px;
+  	height: auto;
+  }
+
+  ul {
+    margin-left: 30px;
+    margin-bottom: 20px
+  }
+}

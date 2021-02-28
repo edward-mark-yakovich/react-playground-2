@@ -1,0 +1,39 @@
+.main {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+
+  @media only screen and (min-width: 600px) {
+    padding: 20px;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+}
+
+.grid > * {
+  width: 100%;
+}
+
+/////// --------
+// page
+/////// --------
+
+.page {
+  position: relative;
+  width: 100%;
+}
+
+.page__heading {
+  margin: 40px 0;
+
+  h1 {
+    font-size: 30px;
+  }
+}
