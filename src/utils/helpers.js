@@ -1,6 +1,10 @@
-import _ from 'lodash';
+export const isEmptyObj = obj => Object.keys(obj).length === 0;
+
+
 
 export const CEASE_EXECUTION = "system/cease_execution";
+
+
 
 export function logErrorRemotely(error, errorInfo = {}) {
   try {
@@ -14,10 +18,14 @@ export function logErrorRemotely(error, errorInfo = {}) {
   }
 }
 
+
+
 export function isRequestError(result) {
+  const resultStatus = result?.response?.status || false;
+
   if (result === CEASE_EXECUTION) {
     return true;
   }
 
-  return _.has(result, 'response.status') && result.response.status !== 200;
+  return resultStatus && resultStatus !== 200;
 }

@@ -1,28 +1,28 @@
 import './home.scss';
 
-import _ from 'lodash';
 import React, {useEffect} from 'react';
 import { useFetch } from "@hooks/useFetch";
 import { useStore } from '@store/StoreContext';
 import { setPostCurrentPage, setHomeIntro, setHomeCategories } from '@store/appReducer';
 import Page from "@connected/wrappers/global/Page.jsx";
+import { isEmptyObj } from '@utils/helpers';
 
 const Home = () => {
   const [state, dispatch] = useStore();
 
   const [responseIntro, loadingIntro, hasErrorIntro] = useFetch('pages?_embed&slug=about');
-  const contentIntro = !_.isEmpty(state.homeIntro) ? state.homeIntro : (responseIntro?.[0] || {});
+  const contentIntro = !isEmptyObj(state.homeIntro) ? state.homeIntro : (responseIntro?.[0] || {});
   const [responseCats, loadingCats, hasErrorCats] = useFetch('categories');
-  const contentCats = !_.isEmpty(state.homeCategories) ? state.homeCategories : (responseCats || []);
+  const contentCats = state.homeCategories.length > 0 ? state.homeCategories : (responseCats || []);
 
   useEffect(() => {
-    if (_.isEmpty(state.homeIntro)) {
+    if (isEmptyObj(state.homeIntro)) {
       dispatch(setHomeIntro(contentIntro));
     }
   }, [responseIntro]);
 
   useEffect(() => {
-    if (_.isEmpty(state.homeCategories)) {
+    if (state.homeCategories.length === 0) {
       dispatch(setHomeCategories(contentCats));
     }
   }, [responseCats]);
@@ -35,6 +35,7 @@ const Home = () => {
 
         <div className="page__heading">
           <h1>Home</h1>
+          <p>Playing with React stuff... Context / useReducer</p>
         </div>
 
         <div className="home-intro-top">
@@ -44,7 +45,7 @@ const Home = () => {
           </div>
         </div>
 
-        {(_.isEmpty(contentIntro))
+        {isEmptyObj(contentIntro)
           ? <p>Fetching data...</p>
           : <div className="home-intro">
               <div className="grid">
@@ -71,13 +72,13 @@ const Home = () => {
             </div>
         }
 
-        {(_.isEmpty(contentCats))
+        {(contentCats.length === 0)
           ? <p>Fetching data...</p>
           : <div className="home-categories">
               <h3>Categories</h3>
 
               <ul>
-                {_.map(contentCats, (category, index) => {
+                {contentCats.map((category, index) => {
                   return (
                     <li key={index}>{category?.name || ''}</li>
                   );

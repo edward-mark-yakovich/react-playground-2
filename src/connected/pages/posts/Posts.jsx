@@ -1,6 +1,5 @@
 import './posts.scss';
 
-import _ from 'lodash';
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import { useFetch } from "@hooks/useFetch";
@@ -38,11 +37,11 @@ const Posts = () => {
           <h1>Posts</h1>
         </div>
 
-        {(_.isEmpty(contentPosts))
+        {(contentPosts.length === 0)
           ? <p>Fetching data...</p>
           : <div className="post-listing">
               <div className="post-listing__btns grid">
-                {_.map(contentPosts, (post, index) => {
+                {contentPosts.map((post, index) => {
                   return (
                     <button className="post-btn" key={index} onClick={() => handleGoToPost(post.slug)}>
                       <div className="post-btn__img">
@@ -63,7 +62,7 @@ const Posts = () => {
               <Pagination
                 currentPage={page}
                 handleChosenPage={(page) => setPage(page)}
-                endOfPages={_.isEmpty(contentPosts) || perPage > contentPosts.length}
+                endOfPages={perPage > contentPosts.length}
               />
             </div>
         }

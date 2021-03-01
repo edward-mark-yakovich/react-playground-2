@@ -9,7 +9,6 @@ module.exports = {
   context: process.cwd(),
   entry: {
     vendorPrime: [
-      'lodash',
       'classnames',
       'react',
       'react-dom',

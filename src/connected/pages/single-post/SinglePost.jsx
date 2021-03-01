@@ -1,12 +1,11 @@
 import './single-post.scss';
 
-import _ from 'lodash';
 import React, { useEffect } from 'react';
 import { useFetch } from "@hooks/useFetch";
 import { useStore } from '@store/StoreContext';
 import { setPost } from '@store/appReducer';
-
 import Page from "@connected/wrappers/global/Page.jsx";
+import { isEmptyObj } from '@utils/helpers';
 
 const SinglePost = ({ match }) => {
   const [state, dispatch] = useStore();
@@ -30,7 +29,7 @@ const SinglePost = ({ match }) => {
           <h1>Single Post</h1>
         </div>
 
-        {(_.isEmpty(contentPost))
+        {isEmptyObj(contentPost)
           ? <p>Fetching data...</p>
           : <div className="single-post">
               <h3

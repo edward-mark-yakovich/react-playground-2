@@ -1,4 +1,5 @@
 import '@globals/page.scss';
+
 import React, { Fragment } from 'react';
 import { render } from 'react-dom';
 import {
@@ -42,7 +43,7 @@ render(
   <StoreProvider initialState={initialState} reducer={appReducer}>
     <BrowserRouter basename={`${subPath}`}>
       <Fragment>
-        <div className="app _emy_myAppName--v-1.0.1">
+        <div className="app _emy_myAppName--v-1.1.0">
           <Switch>
             <RouteWithBoundary exact={true} path="/" component={Home} />
             <RouteWithBoundary exact={true} path="/posts/:slug" component={SinglePost} />
