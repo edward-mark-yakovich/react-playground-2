@@ -9,7 +9,6 @@ module.exports = {
   context: process.cwd(),
   entry: {
     vendorPrime: [
-      'classnames',
       'react',
       'react-dom',
       'react-router',
