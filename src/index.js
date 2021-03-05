@@ -15,6 +15,8 @@ import { initialState, appReducer } from './store/appReducer';
 import Home from '@connected/pages/home/Home.jsx';
 import Posts from '@connected/pages/posts/Posts.jsx';
 import SinglePost from '@connected/pages/single-post/SinglePost.jsx';
+import LoginUseState from '@connected/pages/login/LoginUseState.jsx';
+import LoginUseReducer from '@connected/pages/login/LoginUseReducer.jsx';
 
 /****** Components *****/
 import ApplicationErrorBoundary from '@components/base/error-boundaries/ApplicationErrorBoundary.jsx';
@@ -48,6 +50,8 @@ render(
             <RouteWithBoundary exact={true} path="/" component={Home} />
             <RouteWithBoundary exact={true} path="/posts/:slug" component={SinglePost} />
             <RouteWithBoundary exact={true} path="/posts" component={Posts} />
+            <RouteWithBoundary exact={true} path="/login-use-state" component={LoginUseState} />
+            <RouteWithBoundary exact={true} path="/login-use-reducer" component={LoginUseReducer} />
 
             <Route component={NoRouteMatch} />
           </Switch>

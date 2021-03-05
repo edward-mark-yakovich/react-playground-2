@@ -43,7 +43,7 @@ const Posts = () => {
               <div className="post-listing__btns grid">
                 {contentPosts.map((post, index) => {
                   return (
-                    <button className="post-btn" key={index} onClick={() => handleGoToPost(post.slug)}>
+                    <button type="button" className="post-btn" key={index} onClick={() => handleGoToPost(post.slug)}>
                       <div className="post-btn__img">
                         <img src={post?._embedded?.['wp:featuredmedia']?.['0'].source_url || ''} />
                       </div>

@@ -4,7 +4,7 @@ export function useFetch(url, method = 'GET') {
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
-  
+
   const apiHost = `${window.config.apiHost}`;
   const formattedEnpoint = `${apiHost}${url}`;
 

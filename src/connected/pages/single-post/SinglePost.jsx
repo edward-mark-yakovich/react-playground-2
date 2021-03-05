@@ -7,7 +7,7 @@ import { setPost } from '@store/appReducer';
 import Page from "@connected/wrappers/global/Page.jsx";
 import { isEmptyObj } from '@utils/helpers';
 
-const SinglePost = ({ match }) => {
+const SinglePost = () => {
   const [state, dispatch] = useStore();
   const slug = match?.params?.slug || '';
 
@@ -21,7 +21,6 @@ const SinglePost = ({ match }) => {
   return (
     <Page
       nameId="single-post"
-      match={match}
     >
       <div className="page page--single-post">
 

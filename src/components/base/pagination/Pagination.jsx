@@ -29,7 +29,7 @@ const Pagination = ({ currentPage = 1, handleChosenPage, endOfPages = false }) =
   return (
     <nav className="pagination">
       <div className="grid">
-        <button disabled={page == 1} className="pagination__btn" onClick={() => handlePagination('previous')}>
+        <button type="button" disabled={page == 1} className="pagination__btn" onClick={() => handlePagination('previous')}>
           Previous
         </button>
 
@@ -38,7 +38,7 @@ const Pagination = ({ currentPage = 1, handleChosenPage, endOfPages = false }) =
           <input value={page} onChange={(ev) => handlePaginationDirect(ev)} type="text" name="pagination__input-ID-01" id="pagination__input-ID-01" />
         </div>
 
-        <button disabled={endOfPages} className="pagination__btn" onClick={() => handlePagination('forward')}>
+        <button type="button" disabled={endOfPages} className="pagination__btn" onClick={() => handlePagination('forward')}>
           Next
         </button>
       </div>

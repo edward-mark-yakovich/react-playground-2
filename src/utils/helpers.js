@@ -29,3 +29,27 @@ export function isRequestError(result) {
 
   return resultStatus && resultStatus !== 200;
 }
+
+
+
+
+// fake a login request ... for test...
+export async function fakeLogin({username, password}) {
+  const bodyEl = document.querySelector('body');
+
+  bodyEl.classList.add('_request-active');
+
+  const loginPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (username === 'edward' && password === 'pass') {
+        resolve();
+      } else {
+        reject();
+      }
+
+      bodyEl.classList.remove('_request-active');
+    }, 2000);
+  });
+
+  return loginPromise;
+}

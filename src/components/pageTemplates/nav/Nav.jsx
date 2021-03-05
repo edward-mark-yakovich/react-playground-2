@@ -10,6 +10,9 @@ const Nav = ({ nameId = '' }) => {
         <li className={`${nameId === 'home' ? '_acitve' : ''}`}>
           <Link to="/">Home</Link>
         </li>
+        <li className={`${nameId === 'login' ? '_acitve' : ''}`}>
+          <Link to="/login-use-state">Login</Link>
+        </li>
         <li className={`${nameId === 'posts' ? '_acitve' : ''}`}>
           <Link to="/posts">Posts</Link>
         </li>

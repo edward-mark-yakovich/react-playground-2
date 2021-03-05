@@ -40,7 +40,7 @@ const Home = () => {
 
         <div className="home-intro-top">
           <div>
-            <button onClick={() => dispatch(setPostCurrentPage(state.postCurrentPage + 1))}>Set post page</button>
+            <button type="button" onClick={() => dispatch(setPostCurrentPage(state.postCurrentPage + 1))}>Set post page</button>
             <span> = {state.postCurrentPage} </span>
           </div>
         </div>
