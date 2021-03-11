@@ -1,6 +1,7 @@
 import './login.scss';
 
 import React, { useReducer } from 'react';
+import {Link} from "react-router-dom";
 import Page from "@connected/wrappers/global/Page.jsx";
 import { fakeLogin } from '@utils/helpers';
 
@@ -88,7 +89,7 @@ const LoginUseReducer = () => {
         </div>
 
         <div className="page--login__next-btn">
-          <a href="/login-use-state">Go: useState version ></a>
+          <Link to="/login-use-state">Go: useState version ></Link>
         </div>
 
         {loggedIn

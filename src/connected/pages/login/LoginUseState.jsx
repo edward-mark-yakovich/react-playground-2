@@ -1,6 +1,7 @@
 import './login.scss';
 
 import React, { useState, useCallback } from 'react';
+import {Link} from "react-router-dom";
 import Page from "@connected/wrappers/global/Page.jsx";
 import Inner1 from "./Inner1.jsx";
 import Inner2 from "./Inner2.jsx";
@@ -57,7 +58,7 @@ const LoginUseState = () => {
         </div>
 
         <div className="page--login__next-btn">
-          <a href="/login-use-reducer">Go: useReducer version ></a>
+          <Link to="/login-use-reducer">Go: useReducer version ></Link>
         </div>
 
         {loggedIn
